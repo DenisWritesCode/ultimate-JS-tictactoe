@@ -1,3 +1,3 @@
-export default gameController = () => {
+export default function gameController() {
   console.log("From server");
-};
+}
