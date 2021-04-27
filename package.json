@@ -1,0 +1,8 @@
+{
+  "name": "ultimate-JS-tictactoe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:DenisWritesCode/ultimate-JS-tictactoe.git",
+  "author": "DenisWritesCode <deniswritescode@gmail.com>",
+  "license": "MIT"
+}
