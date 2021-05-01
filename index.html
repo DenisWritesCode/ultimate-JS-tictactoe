@@ -3,11 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/style.css" />
     <title>Ultimate TicTacToe</title>
   </head>
   <body>
-    <p>The journey of a thousand miles begins with a single step.</p>
-
-    <script src="./src/js/index.js"></script>
+    <div class="container">
+      <div class="info">
+        <p class="turn">Turn: <span></span></p>
+        <p class="winner">Winner: <span></span></p>
+        <button class="resetBtn" type="reset">Reset Game</button>
+        <hr />
+      </div>
+      <div class="game">
+        <button class="board">1</button>
+        <button class="board">2</button>
+        <button class="board">3</button>
+        <button class="board">4</button>
+        <button class="board">5</button>
+        <button class="board">6</button>
+        <button class="board">7</button>
+        <button class="board">8</button>
+        <button class="board">9</button>
+      </div>
+    </div>
+    <script type="module" src="./src/js/index.js"></script>
   </body>
 </html>
