@@ -8,24 +8,53 @@
   </head>
   <body>
     <div class="container">
-      <div class="info">
-        <p class="turn">Turn: <span></span></p>
-        <p class="winner">Winner: <span></span></p>
-        <button class="resetBtn" type="reset">Reset Game</button>
-        <hr />
+      <div class="intro">
+        <p>Choose Play Mode:</p>
+        <button class="singlePlayer">Single Player</button>
+        <button class="multiPlayer">Multi Player</button>
+      </div>
+      <div class="names">
+        <form action="#" id="players">
+          <div class="playerX">
+            <label for="playerX"
+              >Name for X:
+              <input type="text" name="playerX" id="playerX" required />
+            </label>
+          </div>
+          <div class="playerO">
+            <label for="playerO">
+              Name for O:
+              <input type="text" name="playerO" id="playerO" required />
+            </label>
+          </div>
+          <input type="submit" value="Start Game" />
+        </form>
       </div>
       <div class="game">
-        <button class="board">1</button>
-        <button class="board">2</button>
-        <button class="board">3</button>
-        <button class="board">4</button>
-        <button class="board">5</button>
-        <button class="board">6</button>
-        <button class="board">7</button>
-        <button class="board">8</button>
-        <button class="board">9</button>
+        <div class="info">
+          <p class="turn">Turn: <span></span></p>
+          <button class="resetBtn" type="reset">Reset Game</button>
+          <hr />
+        </div>
+        <div class="boardGame">
+          <button class="board">1</button>
+          <button class="board">2</button>
+          <button class="board">3</button>
+          <button class="board">4</button>
+          <button class="board">5</button>
+          <button class="board">6</button>
+          <button class="board">7</button>
+          <button class="board">8</button>
+          <button class="board">9</button>
+        </div>
+      </div>
+      <div class="pop-up">
+        <p class="winner">Winner: <span></span></p>
+        <button class="popResetBtn" type="reset">Reset Game</button>
       </div>
     </div>
+
     <script type="module" src="./src/js/index.js"></script>
+    <script type="module" src="./src/js/singlePlayer.js"></script>
   </body>
 </html>

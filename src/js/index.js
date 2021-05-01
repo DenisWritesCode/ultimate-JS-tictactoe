@@ -1,53 +1,80 @@
-import btnReceiver, {
-  getBoard,
-  isGameWon,
-  resetGame,
-  getTurn,
-  getGameWinner,
-} from "./server.js";
+import { setPlayers, getPlayerName } from "./server.js";
 
-const buttons = Array.from(document.querySelectorAll(".board"));
-const resetBtn = document.querySelector(".resetBtn");
-buttons.map((button) => {
-  button.addEventListener("click", (e) => {
-    const value = e.target.innerText;
-    if (Number(value)) {
-      btnReceiver(e.target.innerText);
-      updateUI(); // Need to call that board function
+const intro = document.querySelector(".intro");
+const names = document.querySelector(".names");
+const game = document.querySelector(".game");
+const popUp = document.querySelector(".pop-up");
+export let playerXName;
+export let playerOName;
+
+// step by step
+function oneDiv(divToShow) {
+  const divs = [intro, names, game, popUp];
+
+  divs.map((div) => {
+    if (div === divToShow) {
+      div.classList.remove("hidden");
+    } else {
+      div.classList.add("hidden");
     }
-  });
-});
-
-resetBtn.addEventListener("click", () => {
-  resetGame();
-  buttons.map((btn) => {
-    btn.disabled = false;
-  });
-  updateUI();
-});
-
-function disablePlay() {
-  buttons.map((button) => {
-    button.disabled = true;
   });
 }
 
-const updateUI = () => {
-  const winner = document.querySelector(".winner>span");
+// Choose Play Mode
+function choosePlayMode() {
+  oneDiv(intro);
+}
+
+function enterNames() {
+  oneDiv(names);
+}
+
+function playGame() {
+  oneDiv(game);
+}
+
+// gameFlow
+choosePlayMode();
+
+// Wait for button to be pressed
+const singleP = document.querySelector(".singlePlayer");
+const multiP = document.querySelector(".multiPlayer");
+
+singleP.addEventListener("click", () => {
+  const p = document.createElement("p");
+  p.innerText = "That functionality is coming soon";
+  intro.appendChild(p);
+
+  setTimeout(() => {
+    intro.removeChild(p);
+  }, 1000);
+});
+
+multiP.addEventListener("click", () => {
+  const p = document.createElement("p");
+  p.innerText = "Alright, Let both foes ready their horses!";
+  intro.appendChild(p);
+
+  setTimeout(() => {
+    enterNames();
+  }, 1000);
+});
+
+// Take names
+const form = document.querySelector("#players");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const pX = document.querySelector("#playerX").value;
+  const pO = document.querySelector("#playerO").value;
+
+  playerXName = pX;
+  playerOName = pO;
+  console.log("form", playerOName);
+
+  setPlayers(playerXName, playerOName);
   const turn = document.querySelector(".turn>span");
-  const board = getBoard();
-  for (let i = 0, len = buttons.length; i < len; i++) {
-    buttons[i].innerText = board[i];
-  }
+  turn.innerText = getPlayerName("x");
 
-  if (isGameWon()) {
-    // kill play
-    disablePlay();
-    winner.innerText = getGameWinner();
-  } else {
-    turn.innerText = getTurn();
-    winner.innerText = "-";
-  }
-};
-
-updateUI();
+  playGame();
+});

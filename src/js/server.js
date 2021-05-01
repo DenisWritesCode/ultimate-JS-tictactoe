@@ -1,24 +1,30 @@
-// receive btn number
-// check win
-// return board, turn, state
-
 function gameController() {
   // game object
   const game = {
-    board: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    turn: "x",
-    winner: undefined,
+    board: "",
+    turn: "",
+    winner: "",
+    x: "",
+    o: "",
 
     // Supporting Functions
     cleanGame: function () {
       this.board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
       this.turn = "x";
       this.winner = undefined;
+      this.x = undefined;
+      this.o = undefined;
     },
+
+    setPlayers: function (x, o) {
+      this.x = x;
+      this.o = o;
+    },
+
     setTurn: function (newTurn) {
       this.turn = newTurn;
     },
-    setBoard: function (index) {
+    setPlay: function (index) {
       this.board[index] = this.turn;
     },
     setWinner: function (winner) {
@@ -33,6 +39,13 @@ function gameController() {
     getTurn: function () {
       return this.turn;
     },
+    getPlayerName: function (turn) {
+      if (turn === "o") {
+        return this.o;
+      } else {
+        return this.x;
+      }
+    },
   };
 
   function flipGameTurn() {
@@ -44,8 +57,9 @@ function gameController() {
   }
 
   function setButton(btnNumber) {
-    // Assumes that button is not filled.
-    game.setBoard(btnNumber - 1);
+    // Assumes that button is not filled. Client won't allow checking
+    // of checked box
+    game.setPlay(btnNumber - 1);
     flipGameTurn();
   }
 
@@ -81,6 +95,14 @@ function gameController() {
     return game.getTurn();
   }
 
+  function setPlayers(x, o) {
+    return game.setPlayers(x, o);
+  }
+
+  function getPlayerName(turn) {
+    return game.getPlayerName(turn);
+  }
+
   return {
     isGameWon,
     getGameWinner,
@@ -89,10 +111,13 @@ function gameController() {
     setWinner,
     resetGame,
     getTurn,
+    setPlayers,
+    getPlayerName,
   };
 }
 
 const game = gameController();
+game.resetGame(); // Initialise game
 
 function getBoard() {
   return game.getBoard();
@@ -137,10 +162,26 @@ function checkWin() {
   }
 }
 
+function setPlayers(x, o) {
+  return game.setPlayers(x, o);
+}
+
+function getPlayerName(turn) {
+  return game.getPlayerName(turn);
+}
+
 export default function btnReceiver(btnNumber) {
   // update board;
   game.setButton(btnNumber);
   checkWin();
 }
 
-export { getBoard, isGameWon, resetGame, getTurn, getGameWinner };
+export {
+  getBoard,
+  isGameWon,
+  resetGame,
+  getTurn,
+  getGameWinner,
+  setPlayers,
+  getPlayerName,
+};

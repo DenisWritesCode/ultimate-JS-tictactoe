@@ -9,8 +9,22 @@
   margin: 0 auto;
 }
 
-.game {
+.boardGame {
   display: grid;
   grid-template-columns: repeat(3, 32%);
   gap: 10% 2%; /*row-gap column-gap*/
+}
+
+/* Pop-up modal*/
+.pop-up {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+  display: none;
 }
