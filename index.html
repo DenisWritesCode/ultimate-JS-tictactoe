@@ -62,25 +62,73 @@
       </div>
       <div class="game">
         <div class="info">
-          <p class="turn">Turn: <span></span></p>
-          <button class="resetBtn" type="reset">Reset Game</button>
+          <p class="turn text-xl">Turn: <span></span></p>
+          <button
+            class="resetBtn bg-red-400 p-1 px-3 border-2 border-red-500 rounded-lg active:bg-red-500 focus:outline-none"
+            type="reset"
+          >
+            Reset Game
+          </button>
           <hr />
         </div>
-        <div class="boardGame flex flex-col">
-          <button class="board">1</button>
-          <button class="board">2</button>
-          <button class="board">3</button>
-          <button class="board">4</button>
-          <button class="board">5</button>
-          <button class="board">6</button>
-          <button class="board">7</button>
-          <button class="board">8</button>
-          <button class="board">9</button>
+        <div
+          class="boardGame grid grid-cols-3 gap-4 w-1/2 mx-auto mt-10 bg-gray-50 p-5"
+        >
+          <button
+            class="board active:bg-gray-200 border-2 w-20 p-2 focus:outline-none"
+          >
+            1
+          </button>
+          <button
+            class="board active:bg-gray-200 border w-20 p-2 focus:outline-none"
+          >
+            2
+          </button>
+          <button
+            class="board active:bg-gray-200 border-2 w-20 p-2 focus:outline-none"
+          >
+            3
+          </button>
+          <button
+            class="board active:bg-gray-200 border w-20 p-2 focus:outline-none"
+          >
+            4
+          </button>
+          <button
+            class="board active:bg-gray-200 border-2 w-20 p-2 focus:outline-none"
+          >
+            5
+          </button>
+          <button
+            class="board active:bg-gray-200 border w-20 p-2 focus:outline-none"
+          >
+            6
+          </button>
+          <button
+            class="board active:bg-gray-200 border-2 w-20 p-2 focus:outline-none"
+          >
+            7
+          </button>
+          <button
+            class="board active:bg-gray-200 border w-20 p-2 focus:outline-none"
+          >
+            8
+          </button>
+          <button
+            class="board active:bg-gray-200 border-2 w-20 p-2 focus:outline-none"
+          >
+            9
+          </button>
         </div>
       </div>
-      <div class="pop-up">
+      <div class="pop-up z-10 h-screen">
         <p class="winner">Winner: <span></span></p>
-        <button class="popResetBtn" type="reset">Reset Game</button>
+        <button
+          class="popResetBtn bg-red-400 p-1 px-3 border-2 border-red-500 rounded-lg active:bg-red-500 focus:outline-none"
+          type="reset"
+        >
+          Reset Game
+        </button>
       </div>
     </div>
 

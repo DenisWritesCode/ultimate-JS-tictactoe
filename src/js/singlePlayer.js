@@ -13,6 +13,7 @@ const modal = document.querySelector(".pop-up");
 const buttons = Array.from(document.querySelectorAll(".board"));
 const resetBtn = document.querySelector(".resetBtn");
 const popResetBtn = document.querySelector(".popResetBtn");
+const game = document.querySelector(".game");
 
 buttons.map((button) => {
   button.addEventListener("click", (e) => {
@@ -26,8 +27,8 @@ buttons.map((button) => {
 
 const gameReset = () => {
   resetGame();
-  console.log("reset", playerOName);
   setPlayers(playerXName, playerOName);
+  game.classList.remove("hidden");
   buttons.map((btn) => {
     btn.disabled = false;
   });
@@ -50,6 +51,7 @@ function disablePlay() {
   });
 
   modal.classList.remove("hidden");
+  game.classList.add("hidden");
 }
 
 function updateUI() {

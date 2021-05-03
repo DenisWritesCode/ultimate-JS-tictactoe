@@ -34,8 +34,8 @@ function playGame() {
 }
 
 // gameFlow
-// choosePlayMode();
-playGame();
+choosePlayMode();
+//playGame();
 
 // Wait for button to be pressed
 const singleP = document.querySelector(".singlePlayer");
