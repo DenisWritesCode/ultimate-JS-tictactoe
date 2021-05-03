@@ -34,7 +34,8 @@ function playGame() {
 }
 
 // gameFlow
-choosePlayMode();
+// choosePlayMode();
+playGame();
 
 // Wait for button to be pressed
 const singleP = document.querySelector(".singlePlayer");
@@ -42,7 +43,10 @@ const multiP = document.querySelector(".multiPlayer");
 
 singleP.addEventListener("click", () => {
   const p = document.createElement("p");
-  p.innerText = "That functionality is coming soon";
+  p.innerText = "Single player functionality is coming soon";
+  p.classList.add("mt-4");
+  p.classList.add("text-lg");
+  p.classList.add("text-center");
   intro.appendChild(p);
 
   setTimeout(() => {
@@ -53,6 +57,9 @@ singleP.addEventListener("click", () => {
 multiP.addEventListener("click", () => {
   const p = document.createElement("p");
   p.innerText = "Alright, Let both foes ready their horses!";
+  p.classList.add("mt-4");
+  p.classList.add("text-lg");
+  p.classList.add("text-center");
   intro.appendChild(p);
 
   setTimeout(() => {
