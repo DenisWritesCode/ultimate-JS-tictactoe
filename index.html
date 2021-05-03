@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./build/styles.css" />
     <title>Ultimate TicTacToe</title>
   </head>
   <body>
-    <div class="container">
+    <div class="min-h-screen bg-gray-100 p-10 px-24">
       <div class="intro">
         <p>Choose Play Mode:</p>
-        <button class="singlePlayer">Single Player</button>
+        <button class="singlePlayer bg-red-200">Single Player</button>
         <button class="multiPlayer">Multi Player</button>
       </div>
       <div class="names">
@@ -36,7 +36,7 @@
           <button class="resetBtn" type="reset">Reset Game</button>
           <hr />
         </div>
-        <div class="boardGame">
+        <div class="boardGame flex flex-col">
           <button class="board">1</button>
           <button class="board">2</button>
           <button class="board">3</button>
