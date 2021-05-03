@@ -64,7 +64,7 @@ function updateUI() {
   if (isGameWon()) {
     // kill play
     disablePlay();
-    winner.innerText = getGameWinner();
+    winner.innerText = getPlayerName(getGameWinner());
   } else {
     turn.innerText = getPlayerName(getTurn());
     winner.innerText = "-";

@@ -3,31 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./build/styles.css" />
     <title>Ultimate TicTacToe</title>
   </head>
   <body>
-    <div class="container">
-      <div class="intro">
-        <p>Choose Play Mode:</p>
-        <button class="singlePlayer">Single Player</button>
-        <button class="multiPlayer">Multi Player</button>
+    <div class="min-h-screen bg-gray-100 p-10 px-24">
+      <div
+        class="intro max-w-md bg-gray-300 mx-auto p-10 rounded-lg flex flex-col"
+      >
+        <p class="text-4xl text-center">Choose Play Mode:</p>
+        <button
+          class="singlePlayer border-2 mt-3 px-6 p-2 rounded-lg bg-yellow-300"
+        >
+          Single Player
+        </button>
+        <button
+          class="multiPlayer border-2 mt-3 px-6 p-2 rounded-lg bg-blue-500 active:bg-blue-800 text-lg"
+        >
+          Multi Player
+        </button>
       </div>
-      <div class="names">
-        <form action="#" id="players">
+      <div class="names max-w-md bg-gray-300 mx-auto p-10 rounded-lg">
+        <form action="#" id="players" class="flex flex-col">
           <div class="playerX">
             <label for="playerX"
               >Name for X:
-              <input type="text" name="playerX" id="playerX" required />
+              <input
+                type="text"
+                name="playerX"
+                id="playerX"
+                required
+                placeholder="PlayerX"
+                required
+                class="ml-2 px-4 border rounded py-2 text-gray-700 focus:outline-none items-center"
+              />
             </label>
           </div>
-          <div class="playerO">
+          <div class="playerO mt-3">
             <label for="playerO">
               Name for O:
-              <input type="text" name="playerO" id="playerO" required />
+              <input
+                type="text"
+                name="playerO"
+                id="playerO"
+                placeholder="PlayerO"
+                class="ml-2 px-4 border rounded py-2 text-gray-700 focus:outline-none items-center"
+                required
+              />
             </label>
           </div>
-          <input type="submit" value="Start Game" />
+          <button
+            type="submit"
+            class="mt-3 px-6 p-2 rounded-lg bg-blue-500 active:bg-blue-800"
+          >
+            Start Game
+          </button>
         </form>
       </div>
       <div class="game">
@@ -36,7 +66,7 @@
           <button class="resetBtn" type="reset">Reset Game</button>
           <hr />
         </div>
-        <div class="boardGame">
+        <div class="boardGame flex flex-col">
           <button class="board">1</button>
           <button class="board">2</button>
           <button class="board">3</button>
